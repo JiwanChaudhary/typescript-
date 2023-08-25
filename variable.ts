@@ -22,10 +22,20 @@ userId.toFixed();
 
 // We know that typescript is a typed language. By the word type inference, we mean when the type is not explicitly declared by the user, and the typescript itself has to infer the type on its own. Type inference is very helpful in type checking when there are is no explicit type annotation available in typescript.
 
-
 // boolean
-let isTrue: boolean = true
+let isTrue: boolean = true;
 
+// any
 
+// here any says that I don't wanna check the type, the type can be anything, any isn't type checked
+// let hero: any;
+let hero: string;
+
+function getHero() {
+  return "Hulk";
+  // return true
+}
+
+hero = getHero();
 
 export {};
