@@ -18,19 +18,58 @@
 
 // createCourse();
 
-// Type Aliases
+//! Type Aliases
 
+// type User = {
+//   name: string;
+//   email: string;
+//   isActive: boolean;
+// };
+
+// this function accepts the user of type User and also returns the type User
+// function createUser(user: User): User {
+//   return { name: "", email: "", isActive: true };
+// }
+
+// createUser({ name: "", email: "", isActive: true });
+
+//! Readonly and Optional
 type User = {
+  //   here readonly means, once we assign value to it, it cannot be changed as it is readonly
+  readonly _id: number;
   name: string;
   email: string;
   isActive: boolean;
+  //   here creditCardNumber is optional as we added ? before :, if there is value then we can pass to it else it will not make any problem
+  creditCardNumber?: number;
 };
 
-// this function accepts the user of type User and also returns the type User
-function createUser(user: User): User {
-  return { name: "", email: "", isActive: true };
-}
+let myUser: User = {
+  _id: 123,
+  name: "j",
+  email: "j@j.com",
+  isActive: true,
+};
 
-createUser({ name: "", email: "", isActive: true });
+// here we can change the value of name and other properties but cannot change the value of _id as it is readonly
+
+myUser.email = "j@gmail.com";
+
+//? here _id cannot be changed, it will give error
+// myUser._id = 1234;
+
+//! use of & sign
+type cardNumber = {
+  cardnumber: string;
+};
+
+type cardDate = {
+  carddate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: string;
+  };
 
 export {};

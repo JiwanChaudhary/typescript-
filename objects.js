@@ -5,8 +5,11 @@
 //   isActive: true,
 // };
 Object.defineProperty(exports, "__esModule", { value: true });
-// this function accepts the user of type User and also returns the type User
-function createUser(user) {
-    return { name: "", email: "", isActive: true };
-}
-createUser({ name: "", email: "", isActive: true });
+var myUser = {
+    _id: 123,
+    name: "j",
+    email: "j@j.com",
+    isActive: true,
+};
+// here we can change the value of name and other properties but cannot change the value of _id as it is readonly
+myUser.email = "j@gmail.com";
