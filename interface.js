@@ -1,4 +1,6 @@
 var Jiwan = {
+    isLoggedIn: false,
+    role: "admin",
     dbId: 2233,
     email: "j@g.com",
     userId: 21,

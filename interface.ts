@@ -1,3 +1,4 @@
+//! Interface
 interface User {
   readonly dbId: number;
   email: string;
@@ -8,7 +9,20 @@ interface User {
   getCoupan?(coupanName: string, value: number): string; // this is optional as ? is added
 }
 
-const Jiwan: User = {
+//! we can re-open the interface, that means we can add more property to User interface by again reopeing again which is totally fine
+
+interface User {
+  isLoggedIn: boolean;
+}
+
+//? Interface also has inheritence property
+interface Admin extends User {
+  role: "admin" | "bg" | "gdg";
+}
+
+const Jiwan: Admin = {
+  isLoggedIn: false,
+  role: "admin",
   dbId: 2233,
   email: "j@g.com",
   userId: 21,
