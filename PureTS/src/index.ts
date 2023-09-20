@@ -10,7 +10,7 @@
 
 //? Better way to write above code
 class User {
-  private _courseCount = 1;
+  protected _courseCount = 1;
   private readonly city: string = "Saptari";
   constructor(public email: string, public name: string, private id: string) {}
 
@@ -35,6 +35,19 @@ class User {
   }
 }
 
+// sub-class
+class SubUser extends User {
+  isFamily: boolean = true
+  changeCourseCount() {
+    this._courseCount = 8
+  }
+}
+
 const Jiwan = new User("j@j.com", "jiw", "jujs");
 
 // Jiwan.deleteToken; , error dincha yesle
+
+
+// private => only accessible to the class in which the variable is declared
+// public => accessible to everyone
+// protected => accessible to subClass of a class but not to others
